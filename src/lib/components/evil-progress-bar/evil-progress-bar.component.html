@@ -1,0 +1,25 @@
+<div
+  class="relative h-[2em] w-full overflow-hidden rounded-xl border-y-2 bg-gradient-to-b from-neutral-950 from-25% to-neutral-700 to-90%"
+  [class]="color"
+>
+  <div
+    class="shadow-glow h-full overflow-hidden rounded-xl ring-2 ring-opacity-75 transition-all duration-200"
+    [class]="getBarClasses()"
+    [style.width]="getPercentage() + '%'"
+  >
+    <div
+      class="stripes h-full w-full mix-blend-multiply"
+      *ngIf="type === 'striped'"
+    ></div>
+    <div
+      class="h-full w-full bg-neutral-500 mix-blend-multiply"
+      *ngIf="type === 'dark'"
+    ></div>
+  </div>
+  <div
+    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-center"
+    *ngIf="showValue"
+  >
+    {{ value }}/{{ maxValue }}
+  </div>
+</div>

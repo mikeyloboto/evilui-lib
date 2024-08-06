@@ -1,0 +1,64 @@
+.red {
+  @apply border-red-500;
+}
+.blue {
+  @apply border-blue-500;
+}
+.green {
+  @apply border-green-500;
+}
+.yellow {
+  @apply border-yellow-400;
+}
+.orange {
+  @apply border-orange-500;
+}
+.pink {
+  @apply border-pink-500;
+}
+.purple {
+  @apply border-purple-500;
+}
+.white {
+  @apply border-white;
+}
+
+.red-bar {
+  @apply bg-gradient-to-b from-red-800 to-neutral-950 to-75% shadow-red-500 ring-red-500;
+}
+.blue-bar {
+  @apply bg-gradient-to-b from-blue-800 to-neutral-950 to-75% shadow-blue-500 ring-blue-500;
+}
+.green-bar {
+  @apply bg-gradient-to-b from-green-800 to-neutral-950 to-75% shadow-green-500 ring-green-500;
+}
+.yellow-bar {
+  @apply bg-gradient-to-b from-yellow-800  to-neutral-950 to-75% shadow-yellow-400 ring-yellow-400;
+}
+.orange-bar {
+  @apply bg-gradient-to-b from-orange-800 to-neutral-950 to-75% shadow-orange-500 ring-orange-500;
+}
+.pink-bar {
+  @apply bg-gradient-to-b from-pink-800 to-neutral-950 to-75% shadow-pink-500 ring-pink-500;
+}
+.purple-bar {
+  @apply bg-gradient-to-b from-purple-800 to-neutral-950 to-75% shadow-purple-500 ring-purple-500;
+}
+.white-bar {
+  @apply bg-gradient-to-b from-neutral-500 to-neutral-950 to-75% shadow-neutral-200 ring-white;
+}
+
+.stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff 10px,
+    #888888 10px,
+    #888888 20px
+  );
+  background-size: diagonalize(2) em diagonalize(2) em;
+}
+
+@function diagonalize($value) {
+  @return sqrt($value) * 2;
+}
