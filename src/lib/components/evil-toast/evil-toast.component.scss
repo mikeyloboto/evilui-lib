@@ -1,0 +1,63 @@
+:host {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1200;
+  margin: 0.5em;
+}
+
+.red {
+  @apply border-red-500;
+}
+
+.green {
+  @apply border-lime-500;
+}
+
+.blue {
+  @apply border-blue-500;
+}
+
+.yellow {
+  @apply border-yellow-400;
+}
+.orange {
+  @apply border-orange-500;
+}
+.pink {
+  @apply border-pink-500;
+}
+.purple {
+  @apply border-purple-600;
+}
+.white {
+  @apply border-white;
+}
+
+.toast-shadow-red {
+  @apply shadow-red-500;
+}
+
+.toast-shadow-green {
+  @apply shadow-lime-500;
+}
+
+.toast-shadow-blue {
+  @apply shadow-blue-500;
+}
+
+.toast-shadow-yellow {
+  @apply shadow-yellow-400;
+}
+.toast-shadow-orange {
+  @apply shadow-orange-500;
+}
+.toast-shadow-pink {
+  @apply shadow-pink-500;
+}
+.toast-shadow-purple {
+  @apply shadow-purple-600;
+}
+.toast-shadow-white {
+  @apply shadow-white;
+}

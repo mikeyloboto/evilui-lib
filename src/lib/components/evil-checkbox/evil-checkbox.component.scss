@@ -1,0 +1,49 @@
+.red {
+  @apply from-red-500 hover:ring-red-500;
+}
+.blue {
+  @apply from-blue-500 hover:ring-blue-500;
+}
+.green {
+  @apply from-green-500 hover:ring-green-500;
+}
+.yellow {
+  @apply from-yellow-400 hover:ring-yellow-400;
+}
+.orange {
+  @apply from-orange-500 hover:ring-orange-500;
+}
+.pink {
+  @apply from-pink-500 hover:ring-pink-500;
+}
+.purple {
+  @apply from-purple-500 hover:ring-purple-500;
+}
+.white {
+  @apply from-neutral-200 hover:ring-white;
+}
+
+.center-dot-red {
+  @apply bg-red-500 shadow-red-500;
+}
+.center-dot-blue {
+  @apply bg-blue-500 shadow-blue-500;
+}
+.center-dot-green {
+  @apply bg-green-500 shadow-green-500;
+}
+.center-dot-yellow {
+  @apply bg-yellow-400 shadow-yellow-400;
+}
+.center-dot-orange {
+  @apply bg-orange-500 shadow-orange-500;
+}
+.center-dot-pink {
+  @apply bg-pink-500 shadow-pink-500;
+}
+.center-dot-purple {
+  @apply bg-purple-500 shadow-purple-500;
+}
+.center-dot-white {
+  @apply bg-neutral-200 shadow-neutral-200;
+}

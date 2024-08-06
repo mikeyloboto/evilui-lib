@@ -1,0 +1,22 @@
+<div class="flex w-full flex-row flex-wrap gap-2">
+  <div
+    *ngFor="let tag of tags"
+    class="hover:shadow-glow rounded-md border-b-2 bg-gradient-to-b to-75% px-2 py-1 shadow-md shadow-neutral-950"
+    [class]="color"
+  >
+    <div class="flex flex-row gap-2">
+      <div>{{ tag }}</div>
+      <button (click)="removeTag(tag)">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+  <div
+    *ngIf="addButton"
+    class="hover:shadow-glow cursor-pointer rounded-md border-b-2 bg-gradient-to-b to-neutral-950 to-75% px-2 py-1 shadow-md shadow-neutral-950 transition-all duration-200"
+    (click)="addTag()"
+    [class]="color"
+  >
+    <i class="bi bi-plus"></i>
+  </div>
+</div>

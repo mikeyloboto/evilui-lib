@@ -1,0 +1,9 @@
+<input
+  class="focus:shadow-glow rounded-lg border-y-2 bg-gradient-to-b from-neutral-950 to-neutral-800 p-2 transition-all duration-100 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2 focus:ring-offset-black"
+  [class]="getClasses()"
+  [(ngModel)]="data"
+  [placeholder]="placeholder"
+  [type]="type"
+  (change)="dataChange.emit(data); change.emit()"
+  (keydown.enter)="enterClick.emit()"
+/>

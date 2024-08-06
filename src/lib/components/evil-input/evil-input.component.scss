@@ -1,0 +1,24 @@
+.red {
+  @apply border-red-700 selection:bg-red-800 focus:border-red-500 focus:shadow-red-500 focus:ring-red-500;
+}
+.blue {
+  @apply border-blue-700 selection:bg-blue-800 focus:border-blue-500  focus:shadow-blue-500  focus:ring-blue-500;
+}
+.green {
+  @apply border-green-700 selection:bg-green-800 focus:border-green-500 focus:shadow-green-500  focus:ring-green-500;
+}
+.yellow {
+  @apply border-yellow-600 selection:bg-yellow-800 focus:border-yellow-400 focus:shadow-yellow-400  focus:ring-yellow-400;
+}
+.orange {
+  @apply border-orange-700 selection:bg-orange-800 focus:border-orange-500 focus:shadow-orange-500  focus:ring-orange-500;
+}
+.pink {
+  @apply border-pink-700 selection:bg-pink-800 focus:border-pink-500 focus:shadow-pink-500  focus:ring-pink-500;
+}
+.purple {
+  @apply border-purple-700 selection:bg-purple-800 focus:border-purple-500 focus:shadow-purple-500  focus:ring-purple-500;
+}
+.white {
+  @apply border-neutral-500 selection:bg-neutral-500 focus:border-white focus:shadow-neutral-200  focus:ring-white;
+}

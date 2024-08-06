@@ -1,0 +1,65 @@
+@for (toast of toastService.toasts; track toast) {
+  <div
+    class="shadow-glow mb-2 min-w-72 rounded-t-lg rounded-bl-xl"
+    [class]="'toast-shadow-' + (toast.color || 'red')"
+  >
+    <div
+      class="shadow-glow rounded-t-lg border-t-2 bg-black"
+      [class]="toast.color || 'red'"
+    >
+      <div class="flex flex-row gap-10 p-2">
+        <div class="my-auto grow font-bold">
+          <span *ngIf="toast.icon"><i class="bi bi-{{ toast.icon }}"></i></span>
+          {{ toast.header || 'Message' }}
+        </div>
+        <button
+          class="rounded-md bg-black px-1"
+          [class]="toast.color || 'red'"
+          (click)="toastService.remove(toast)"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+    </div>
+    <div
+      class="flex flex-col gap-2 rounded-bl-xl border-b-2 bg-black p-3 pb-2 pt-1 opacity-90"
+      [class]="toast.color || 'red'"
+    >
+      <div [class]="toast.color || 'red'">
+        {{ toast.message }}
+      </div>
+      <div class="flex w-full flex-row" *ngIf="toast.inputCallback">
+        <input
+          class="grow rounded-l-lg border-y-2 bg-neutral-800 p-2"
+          [class]="toast.color || 'red'"
+          [(ngModel)]="toast.inputText"
+          (keydown.enter)="
+            conditionalRemove(toast.inputCallback(toast.inputText!), toast)
+          "
+        />
+        <button
+          class="grow rounded-r-lg border-y-2 bg-neutral-900 p-2"
+          [class]="toast.color || 'red'"
+          (click)="
+            conditionalRemove(toast.inputCallback(toast.inputText!), toast)
+          "
+        >
+          <i class="bi bi-check"></i>
+        </button>
+      </div>
+      <div class="flex w-full flex-row" *ngIf="toast.successCallback">
+        <evil-button
+          color="red"
+          (click)="procCancelClick(toast); toastService.remove(toast)"
+          ><i class="bi bi-x-lg mx-1"></i
+        ></evil-button>
+        <div class="grow"></div>
+        <evil-button
+          color="green"
+          (click)="toast.successCallback(); toastService.remove(toast)"
+          ><i class="bi bi-check-lg mx-1"></i
+        ></evil-button>
+      </div>
+    </div>
+  </div>
+}

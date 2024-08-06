@@ -1,0 +1,24 @@
+.red {
+  @apply border-red-500 from-red-500 to-neutral-950   hover:shadow-red-500;
+}
+.blue {
+  @apply border-blue-500 from-blue-500 to-neutral-950  hover:shadow-blue-500;
+}
+.green {
+  @apply border-green-500 from-green-500 to-neutral-950  hover:shadow-green-500;
+}
+.yellow {
+  @apply border-yellow-400 from-yellow-400 to-neutral-950  hover:shadow-yellow-400;
+}
+.orange {
+  @apply border-orange-500 from-orange-500 to-neutral-950  hover:shadow-orange-500;
+}
+.pink {
+  @apply border-pink-500 from-pink-500 to-neutral-950  hover:shadow-pink-500;
+}
+.purple {
+  @apply border-purple-500 from-purple-500 to-neutral-950  hover:shadow-purple-500;
+}
+.white {
+  @apply border-white from-neutral-300 to-neutral-950  hover:shadow-neutral-300;
+}

@@ -1,0 +1,54 @@
+<div class="flex flex-col gap-1">
+  <table class="border-separate border-spacing-2">
+    <thead>
+      <tr>
+        <td>Key</td>
+        <td>Value</td>
+        <td class="w-1/6">Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of procData">
+        <td class="align-top">
+          <input
+            class="p-2 bg-neutral-700 rounded-lg w-full"
+            [(ngModel)]="item.key"
+            (change)="rebuild()"
+          />
+        </td>
+        <td class="align-top">
+          <input
+            *ngIf="!checkComplex(item)"
+            class="p-2 bg-neutral-700 rounded-lg w-full"
+            [(ngModel)]="item.value"
+            (change)="rebuild()"
+          />
+          <app-metadata-editor
+            *ngIf="checkComplex(item)"
+            [(data)]="item.value"
+            (change)="rebuild()"
+          ></app-metadata-editor>
+        </td>
+        <td class="flex flex-row">
+          <evil-button
+            color="red"
+            class="px-4"
+            (click)="removeField(item)"
+            title="Delete"
+            ><i class="bi bi-trash-fill mx-1"></i
+          ></evil-button>
+          <evil-button
+            color="blue"
+            class="px-4"
+            (click)="convertToComplex(item)"
+            title="Comvert to Object"
+            ><i class="bi bi-gear mx-1"></i
+          ></evil-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <evil-button color="green" class="px-4" [w-full]="true" (click)="addField()"
+    ><i class="bi bi-plus-lg"></i
+  ></evil-button>
+</div>

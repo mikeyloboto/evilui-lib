@@ -1,0 +1,10 @@
+<select
+  [ngModel]="value"
+  (ngModelChange)="procChange($event)"
+  class="hover:shadow-glow rounded-lg border-y-2 bg-neutral-900 bg-gradient-to-b from-neutral-800 to-neutral-950 p-2 transition-all duration-200 hover:ring-2 hover:ring-offset-2 hover:ring-offset-black focus:outline-none"
+  [class]="getClasses()"
+>
+  <option *ngFor="let val of data" [ngValue]="val">
+    {{ valueField ? val[valueField] : val }}
+  </option>
+</select>
