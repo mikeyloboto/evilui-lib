@@ -1,6 +1,6 @@
 <div class="w-full" (click)="$event.stopPropagation()">
   <button
-    class="duration-50 hover:shadow-glow rounded-xl border-y-2 bg-gradient-to-b from-neutral-800 to-neutral-950 p-2 transition-all hover:ring-2 hover:ring-opacity-50 hover:ring-offset-2 hover:ring-offset-black focus:outline-none active:bg-gradient-to-t active:ring-2 active:ring-opacity-50 active:ring-offset-2 active:ring-offset-black"
+    class="duration-50 rounded-xl border-y-2 bg-gradient-to-b to-neutral-950 p-2 transition-all hover:shadow-glow hover:ring-2 hover:ring-opacity-50 hover:ring-offset-2 hover:ring-offset-black focus:outline-none active:bg-gradient-to-t active:ring-2 active:ring-opacity-50 active:ring-offset-2 active:ring-offset-black"
     (click)="handleClick(); $event.stopPropagation()"
     [class]="getClass()"
   >

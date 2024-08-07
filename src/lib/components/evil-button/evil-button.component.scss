@@ -22,3 +22,28 @@
 .white {
   @apply border-neutral-500 shadow-neutral-200 hover:border-white hover:ring-neutral-500 active:ring-white;
 }
+
+.red-metal {
+  @apply border-red-600 from-red-600 to-neutral-950 shadow-md shadow-neutral-950 hover:shadow-red-500  hover:ring-red-900 active:ring-red-500;
+}
+.blue-metal {
+  @apply border-blue-600 from-blue-600 to-neutral-950 shadow-md shadow-neutral-950 hover:shadow-blue-500 hover:ring-blue-900 active:ring-blue-500;
+}
+.green-metal {
+  @apply border-green-600 from-green-600 to-neutral-950 shadow-md shadow-neutral-950 hover:shadow-green-500 hover:ring-green-900 active:ring-green-500;
+}
+.yellow-metal {
+  @apply border-yellow-400 from-yellow-400 to-neutral-950 shadow-md shadow-neutral-950 hover:shadow-yellow-400 hover:ring-yellow-700 active:ring-yellow-400;
+}
+.orange-metal {
+  @apply border-orange-600 from-orange-600 to-neutral-950 shadow-md shadow-neutral-950 hover:shadow-orange-500 hover:ring-orange-900 active:ring-orange-500;
+}
+.pink-metal {
+  @apply border-pink-500 from-pink-500 to-neutral-950 shadow-md shadow-neutral-950 hover:shadow-pink-500 hover:ring-pink-900 active:ring-pink-500;
+}
+.purple-metal {
+  @apply border-purple-600 from-purple-600 to-neutral-950 shadow-md shadow-neutral-950 hover:shadow-purple-500 hover:ring-purple-900 active:ring-purple-500;
+}
+.white-metal {
+  @apply border-white from-white to-neutral-950 shadow-md shadow-neutral-950 hover:border-white hover:ring-neutral-500 active:ring-white;
+}
