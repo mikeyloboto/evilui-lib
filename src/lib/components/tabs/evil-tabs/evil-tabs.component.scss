@@ -54,3 +54,31 @@
 .white-tab-active {
   @apply rounded-b-sm border-neutral-200 from-neutral-200 to-neutral-950 to-75%;
 }
+
+.container-red {
+  @apply border-red-600;
+}
+.container-blue {
+  @apply border-blue-600;
+}
+.container-green {
+  @apply border-green-600;
+}
+.container-yellow {
+  @apply border-yellow-400;
+}
+.container-orange {
+  @apply border-orange-500;
+}
+.container-pink {
+  @apply border-pink-500;
+}
+.container-purple {
+  @apply border-purple-500;
+}
+.container-white {
+  @apply border-neutral-200;
+}
+.darken-container {
+  @apply bg-neutral-950 bg-opacity-40;
+}

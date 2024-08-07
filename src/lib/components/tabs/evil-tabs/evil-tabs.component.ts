@@ -33,9 +33,10 @@ export class EvilTabsComponent implements AfterContentInit {
   private activeTab: EvilTabDef | undefined;
 
   @ContentChildren(EvilTabComponent) tabs!: QueryList<EvilTabComponent>;
-  @Input('tabs') tabDefs: EvilTabDef[] = [];
-  @Input('darken') darken = true;
+  tabDefs: EvilTabDef[] = [];
+  @Input('darken') darken = false;
   @Input('container-color') container:
+    | 'none'
     | 'red'
     | 'blue'
     | 'green'
@@ -43,7 +44,7 @@ export class EvilTabsComponent implements AfterContentInit {
     | 'orange'
     | 'pink'
     | 'purple'
-    | 'white' = 'red';
+    | 'white' = 'none';
 
   switchTab(switchTab: EvilTabDef) {
     this.tabs.forEach((tab, i) => {
@@ -71,6 +72,18 @@ export class EvilTabsComponent implements AfterContentInit {
     }
 
     classes.push();
+    return classes;
+  }
+
+  getContainerClasses() {
+    const classes = [];
+    if (this.container != 'none') {
+      classes.push(`container-${this.container}`);
+      classes.push('border-y-2');
+    }
+    if (this.darken) {
+      classes.push('darken-container');
+    }
     return classes;
   }
 }

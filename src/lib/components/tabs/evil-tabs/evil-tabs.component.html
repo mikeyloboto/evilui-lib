@@ -18,7 +18,10 @@
       {{ tab.title }}
     </div>
   </div>
-  <div class="rounded-xl p-2 shadow-inner shadow-neutral-950">
+  <div
+    class="rounded-xl p-2 shadow-inner shadow-neutral-950"
+    [class]="getContainerClasses()"
+  >
     <ng-content />
   </div>
 </div>
