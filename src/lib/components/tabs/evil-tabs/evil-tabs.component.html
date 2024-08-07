@@ -1,0 +1,24 @@
+<div class="flex w-full flex-col">
+  <div class="flex flex-row gap-1 px-3">
+    <div
+      *ngFor="let tab of getLeft()"
+      class="cursor-pointer"
+      (click)="switchTab(tab)"
+      [class]="getClasses(tab)"
+    >
+      {{ tab.title }}
+    </div>
+    <div class="grow"></div>
+    <div
+      *ngFor="let tab of getRight()"
+      class="cursor-pointer"
+      (click)="switchTab(tab)"
+      [class]="getClasses(tab)"
+    >
+      {{ tab.title }}
+    </div>
+  </div>
+  <div class="rounded-xl p-2 shadow-inner shadow-neutral-950">
+    <ng-content />
+  </div>
+</div>

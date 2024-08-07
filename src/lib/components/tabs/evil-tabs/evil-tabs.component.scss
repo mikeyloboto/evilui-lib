@@ -1,0 +1,56 @@
+.base-tab {
+  @apply rounded-t-lg border-t-2 bg-gradient-to-b  p-2 transition-all duration-200;
+}
+.inactive-tab {
+  @apply from-neutral-950 to-neutral-900;
+}
+
+.red-tab {
+  @apply border-red-800 hover:border-red-500 hover:shadow-glow hover:shadow-red-500;
+}
+.blue-tab {
+  @apply border-blue-800 hover:border-blue-500 hover:shadow-glow hover:shadow-blue-500;
+}
+.green-tab {
+  @apply border-green-800 hover:border-green-500 hover:shadow-glow hover:shadow-green-500;
+}
+.yellow-tab {
+  @apply border-yellow-700 hover:border-yellow-400 hover:shadow-glow hover:shadow-yellow-400;
+}
+.orange-tab {
+  @apply border-orange-800 hover:border-orange-500 hover:shadow-glow hover:shadow-orange-500;
+}
+.pink-tab {
+  @apply border-pink-800 hover:border-pink-500 hover:shadow-glow hover:shadow-pink-500;
+}
+.purple-tab {
+  @apply border-purple-800 hover:border-purple-500 hover:shadow-glow hover:shadow-purple-500;
+}
+.white-tab {
+  @apply border-neutral-500 hover:border-neutral-50 hover:shadow-glow hover:shadow-neutral-50;
+}
+
+.red-tab-active {
+  @apply rounded-b-sm border-red-600 from-red-600 to-neutral-950 to-75%;
+}
+.blue-tab-active {
+  @apply rounded-b-sm border-blue-600 from-blue-600 to-neutral-950 to-75%;
+}
+.green-tab-active {
+  @apply rounded-b-sm border-green-600 from-green-600 to-neutral-950 to-75%;
+}
+.yellow-tab-active {
+  @apply rounded-b-sm border-yellow-400 from-yellow-400 to-neutral-950 to-75%;
+}
+.orange-tab-active {
+  @apply rounded-b-sm border-orange-500 from-orange-500 to-neutral-950 to-75%;
+}
+.pink-tab-active {
+  @apply rounded-b-sm border-pink-500 from-pink-500 to-neutral-950 to-75%;
+}
+.purple-tab-active {
+  @apply rounded-b-sm border-purple-500 from-purple-500 to-neutral-950 to-75%;
+}
+.white-tab-active {
+  @apply rounded-b-sm border-neutral-200 from-neutral-200 to-neutral-950 to-75%;
+}
