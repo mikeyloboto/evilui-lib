@@ -4,7 +4,6 @@ import {
   Component,
   ContentChildren,
   Input,
-  OnInit,
   QueryList,
 } from '@angular/core';
 import { EvilTabComponent } from './evil-tab/evil-tab.component';
@@ -18,9 +17,6 @@ import { EvilTabComponent } from './evil-tab/evil-tab.component';
 })
 export class EvilTabsComponent implements AfterContentInit {
   ngAfterContentInit(): void {
-    // });
-    console.log(this.tabs);
-
     this.tabs.forEach((tab) => {
       this.tabDefs.push({
         color: tab.color,
