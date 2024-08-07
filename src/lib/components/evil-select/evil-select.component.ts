@@ -16,6 +16,7 @@ export class EvilSelectComponent {
   @Input('value-field') valueField?: string;
   @Input('on-change') onChange?: (value: any) => void;
   @Input('w-full') wFull = false;
+  @Input('placeholder') placeholder = 'Select option...';
   @Input('color') color:
     | 'red'
     | 'blue'
