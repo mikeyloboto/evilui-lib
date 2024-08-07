@@ -7,16 +7,28 @@ import {
   OnInit,
   QueryList,
 } from '@angular/core';
+import { EvilTabComponent } from './evil-tab/evil-tab.component';
 
 @Component({
-  selector: 'evil-tabs',
+  selector: 'evil-tab-container',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './evil-tabs.component.html',
   styleUrl: './evil-tabs.component.scss',
 })
-export class EvilTabsComponent implements OnInit, AfterContentInit {
+export class EvilTabsComponent implements AfterContentInit {
   ngAfterContentInit(): void {
+    // });
+    console.log(this.tabs);
+
+    this.tabs.forEach((tab) => {
+      this.tabDefs.push({
+        color: tab.color,
+        id: tab.id,
+        title: tab.title,
+        position: tab.position,
+      });
+    });
     if (this.tabDefs.length > 0) {
       this.switchTab(this.tabDefs[0]);
     }
@@ -24,13 +36,7 @@ export class EvilTabsComponent implements OnInit, AfterContentInit {
 
   private activeTab: EvilTabDef | undefined;
 
-  @ContentChildren('tab') tabs!: QueryList<any>;
-  ngOnInit(): void {
-    this.tabDefs.forEach((tab) => {
-      if (!tab.color) tab.color = 'red';
-      if (!tab.position) tab.position = 'start';
-    });
-  }
+  @ContentChildren(EvilTabComponent) tabs!: QueryList<EvilTabComponent>;
   @Input('tabs') tabDefs: EvilTabDef[] = [];
   @Input('darken') darken = true;
   @Input('container-color') container:
@@ -45,8 +51,7 @@ export class EvilTabsComponent implements OnInit, AfterContentInit {
 
   switchTab(switchTab: EvilTabDef) {
     this.tabs.forEach((tab, i) => {
-      tab.nativeElement.style.display =
-        tab.nativeElement.id === switchTab.id ? 'block' : 'none';
+      tab.active = tab.id === switchTab.id;
     });
     this.activeTab = switchTab;
   }
@@ -74,11 +79,11 @@ export class EvilTabsComponent implements OnInit, AfterContentInit {
   }
 }
 
-export class EvilTabDef {
-  title!: string;
-  id!: string;
-  position?: 'start' | 'end' = 'start';
-  color?:
+export interface EvilTabDef {
+  title: string;
+  id: string;
+  position: 'start' | 'end';
+  color:
     | 'red'
     | 'blue'
     | 'green'
@@ -86,5 +91,5 @@ export class EvilTabDef {
     | 'orange'
     | 'pink'
     | 'purple'
-    | 'white' = 'red';
+    | 'white';
 }
