@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   ComponentRef,
+  HostListener,
   Injector,
   Input,
   ViewChild,
@@ -15,8 +16,8 @@ import {
   imports: [CommonModule],
   selector: 'evil-wrapper',
   template: `
-    <div class="wrapper">
-      <div class="inner-align">
+    <div class="wrapper" (click)="dismiss()">
+      <div class="inner-align" (click)="$event.stopPropagation()">
         <ng-container #modalContent></ng-container>
       </div>
     </div>
@@ -41,6 +42,7 @@ import {
 })
 export class EvilModalWrapper implements AfterViewInit {
   @Input() component: any;
+  @Input() outsideDismiss: boolean = false;
 
   componentInputs: any;
 
@@ -56,6 +58,24 @@ export class EvilModalWrapper implements AfterViewInit {
     Object.keys(this.componentInputs || {}).forEach((inputName) => {
       componentRef.instance[inputName] = this.componentInputs[inputName];
     });
+    this.dismiss = () => {
+      if (this.outsideDismiss) {
+        componentRef.instance.dismiss();
+      }
+    };
+    this.hardDismiss = () => {
+      componentRef.instance.dismiss();
+    };
     this.cdr.detectChanges();
   }
+
+  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(
+    event: KeyboardEvent,
+  ) {
+    event.stopPropagation();
+    this.hardDismiss();
+  }
+
+  private hardDismiss!: () => void;
+  protected dismiss!: () => void;
 }

@@ -37,6 +37,7 @@ export class EvilModalService {
       modalRef.destroy();
     };
     modalRef.instance.componentInputs = componentOptions;
+    modalRef.instance.outsideDismiss = options?.outsideDismiss || false;
     this.modalRefs.push(modalRef);
   }
 }
@@ -44,6 +45,7 @@ export class EvilModalService {
 export interface EvilModalOptions {
   onSuccess?: (result: any) => void;
   onDismiss?: (result: any) => void;
+  outsideDismiss?: boolean;
   data?: any;
 }
 

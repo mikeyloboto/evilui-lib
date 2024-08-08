@@ -12,4 +12,5 @@ export * from './lib/components/evil-select/evil-select.component';
 export * from './lib/components/evil-taglist/evil-taglist.component';
 export * from './lib/components/evil-toast/evil-toast.component';
 export * from './lib/components/evil-toast/evil-toast.service';
-export * from './lib/components/tabs/evil-tabs/tabs-api';
+export * from './lib/components/evil-tabs/tabs-api';
+export * from './lib/components/evil-modal/modal-api';
