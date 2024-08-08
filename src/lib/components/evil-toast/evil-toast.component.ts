@@ -5,13 +5,13 @@ import { EvilToastInfo, EvilToastService } from './evil-toast.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-toast',
+  selector: 'evil-toast-container',
   standalone: true,
   imports: [CommonModule, FormsModule, EvilButtonComponent],
   templateUrl: './evil-toast.component.html',
   styleUrl: './evil-toast.component.scss',
 })
-export class EvilToastComponent {
+export class EvilToastContainerComponent {
   constructor(protected toastService: EvilToastService) {}
 
   conditionalRemove(condition: boolean, toast: EvilToastInfo) {
