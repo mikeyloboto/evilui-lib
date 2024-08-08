@@ -3,13 +3,9 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
-  ComponentFactoryResolver,
   ComponentRef,
   Injector,
   Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
@@ -20,14 +16,24 @@ import {
   selector: 'evil-wrapper',
   template: `
     <div class="wrapper">
-      <ng-container #modalContent></ng-container>
+      <div class="inner-align">
+        <ng-container #modalContent></ng-container>
+      </div>
     </div>
   `,
   styles: [
     `
       .wrapper {
-        margin: 10px;
-        border: 1px solid #ccc;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+      }
+      .inner-align {
+        margin: auto;
         padding: 10px;
       }
     `,
@@ -37,8 +43,6 @@ export class EvilModalWrapper implements AfterViewInit {
   @Input() component: any;
 
   componentInputs: any;
-
-  componentInjector!: Injector;
 
   @ViewChild('modalContent', { read: ViewContainerRef })
   modalContent!: ViewContainerRef;
