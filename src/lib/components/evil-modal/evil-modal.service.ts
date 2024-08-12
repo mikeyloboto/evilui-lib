@@ -37,6 +37,12 @@ export class EvilModalService {
       modalRef.destroy();
     };
     modalRef.instance.componentInputs = componentOptions;
+    modalRef.instance.escDismiss = () => {
+      if (this.modalRefs.length > 0) {
+        this.modalRefs[this.modalRefs.length - 1].instance.dismiss();
+        this.modalRefs.pop()?.destroy();
+      }
+    };
     modalRef.instance.outsideDismiss = options?.outsideDismiss || false;
     this.modalRefs.push(modalRef);
   }

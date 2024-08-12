@@ -43,6 +43,7 @@ import {
 export class EvilModalWrapper implements AfterViewInit {
   @Input() component: any;
   @Input() outsideDismiss: boolean = false;
+  @Input() escDismiss!: () => void;
 
   componentInputs: any;
 
@@ -64,7 +65,7 @@ export class EvilModalWrapper implements AfterViewInit {
       }
     };
     this.hardDismiss = () => {
-      componentRef.instance.dismiss();
+      this.escDismiss();
     };
     this.cdr.detectChanges();
   }
@@ -72,7 +73,7 @@ export class EvilModalWrapper implements AfterViewInit {
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(
     event: KeyboardEvent,
   ) {
-    event.stopPropagation();
+    event.stopImmediatePropagation();
     this.hardDismiss();
   }
 
