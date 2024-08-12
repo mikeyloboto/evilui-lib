@@ -51,6 +51,10 @@ export class EvilTabsComponent implements AfterContentInit {
       tab.active = tab.id === switchTab.id;
     });
     this.activeTab = switchTab;
+    const actTab = this.tabs.find((tab) => tab.id === switchTab.id);
+    if (actTab && actTab.onOpen) {
+      actTab.onOpen.emit();
+    }
   }
 
   getLeft() {

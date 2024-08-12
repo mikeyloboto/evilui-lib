@@ -25,7 +25,7 @@ export class EvilInputComponent {
     | 'pink'
     | 'purple'
     | 'white' = 'red';
-  @Input('type') type: 'text' | 'number' = 'text';
+  @Input('type') type: 'text' | 'number' | 'password' = 'text';
 
   protected getClasses(): string[] {
     const classes = [];

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'evil-tab',
@@ -22,4 +22,5 @@ export class EvilTabComponent {
   @Input('title') title: string = 'tab';
   @Input('active') active: boolean = false;
   @Input('id') id: string = `tab-${Math.random().toString(36)}`;
+  @Output('onOpen') onOpen: EventEmitter<void> = new EventEmitter<void>();
 }
