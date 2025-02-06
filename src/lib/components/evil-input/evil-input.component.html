@@ -3,7 +3,7 @@
   [class]="getClasses()"
   [(ngModel)]="data"
   [placeholder]="placeholder"
+  (ngModelChange)="data = $event; dataChange.emit(data); change.emit()"
   [type]="type"
-  (keydown)="dataChange.emit(data); change.emit()"
   (keydown.enter)="enterClick.emit()"
 />
