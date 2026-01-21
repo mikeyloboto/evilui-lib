@@ -1,36 +1,27 @@
-
-import { Component, Input } from '@angular/core';
+import { Component, computed, input} from '@angular/core';
+import { EvilColor } from '../../evilui-lib.service';
 
 @Component({
   selector: 'evil-progress-bar',
-  standalone: true,
   imports: [],
   templateUrl: './evil-progress-bar.component.html',
   styleUrl: './evil-progress-bar.component.scss',
 })
 export class EvilProgressBarComponent {
-  @Input('value') value: number = 0;
-  @Input('max-value') maxValue: number = 100;
-  @Input('color') color:
-    | 'red'
-    | 'blue'
-    | 'green'
-    | 'yellow'
-    | 'orange'
-    | 'pink'
-    | 'purple'
-    | 'white' = 'red';
-  @Input('show-value') showValue: boolean = true;
-  @Input('type') type: 'normal' | 'striped' | 'dark' = 'normal';
+  value = input(0);
+  maxValue = input(100);
+  color = input('red' as EvilColor);
+  showValue = input(true);
+  type = input('normal' as 'normal' | 'striped' | 'dark');
 
-  getPercentage(): number {
-    return (this.value / this.maxValue) * 100;
-  }
+  percentage = computed(() => {
+    return (this.value() / this.maxValue()) * 100;
+  });
 
-  getBarClasses(): string[] {
-    const classes = [];
-    classes.push(`${this.color}-bar`);
+  barClasses = computed(() => {
+    const classes = [] as string[];
+    classes.push(`${this.color()}-bar`);
 
     return classes;
-  }
+  });
 }

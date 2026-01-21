@@ -1,40 +1,34 @@
-
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 import { Router } from '@angular/router';
+import { EvilColor } from '../../evilui-lib.service';
 
 @Component({
   selector: 'evil-button',
-  standalone: true,
   imports: [],
   templateUrl: './evil-button.component.html',
   styleUrl: './evil-button.component.scss',
 })
 export class EvilButtonComponent {
-  constructor(private router: Router) {}
-  @Input('color') color:
-    | 'red'
-    | 'blue'
-    | 'green'
-    | 'yellow'
-    | 'orange'
-    | 'pink'
-    | 'purple'
-    | 'white' = 'red';
-  @Input('w-full') wFull: boolean = false;
-  @Input('link') link: string | undefined = undefined;
-  @Input('type') type: 'neon' | 'metal' = 'neon';
-  @Output('click') clickHandler: EventEmitter<void> = new EventEmitter<void>();
+  constructor(private router: Router) { }
+
+  color = input('red' as EvilColor);
+  wFull = input(false);
+  link = input(undefined as string | undefined);
+  type = input('neon' as 'neon' | 'metal');
+  click = output<void>();
+
+  classes = computed(() => {
+    const classes: string[] = [];
+    classes.push(this.wFull() ? 'w-full' : 'w-fit');
+    if (this.type() === 'neon')
+      classes.push(`${this.color()}`, 'from-neutral-800');
+    if (this.type() === 'metal')
+      classes.push(`${this.color()}-metal`, 'to-75%');
+    return classes;
+  });
+
   handleClick() {
     if (this.link) this.router.navigate([this.link]);
-    this.clickHandler.emit();
-  }
-
-  protected getClass(): string[] {
-    const classes = [];
-
-    classes.push(this.wFull ? 'w-full' : 'w-fit');
-    if (this.type === 'neon') classes.push(`${this.color}`, 'from-neutral-800');
-    if (this.type === 'metal') classes.push(`${this.color}-metal`, 'to-75%');
-    return classes;
+    this.click.emit();
   }
 }

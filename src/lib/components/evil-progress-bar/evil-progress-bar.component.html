@@ -4,25 +4,25 @@
   >
   <div
     class="shadow-glow h-full overflow-hidden rounded-xl ring-2 ring-opacity-75 transition-all duration-200"
-    [class]="getBarClasses()"
-    [style.width]="getPercentage() + '%'"
+    [class]="barClasses()"
+    [style.width]="percentage() + '%'"
     >
-    @if (type === 'striped') {
+    @if (type() === 'striped') {
       <div
         class="stripes h-full w-full mix-blend-multiply"
       ></div>
     }
-    @if (type === 'dark') {
+    @if (type() === 'dark') {
       <div
         class="h-full w-full bg-neutral-500 mix-blend-multiply"
       ></div>
     }
   </div>
-  @if (showValue) {
+  @if (showValue()) {
     <div
       class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-center"
       >
-      {{ value }}/{{ maxValue }}
+      {{ value() }}/{{ maxValue() }}
     </div>
   }
 </div>

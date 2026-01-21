@@ -1,4 +1,3 @@
-
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -50,7 +49,7 @@ export class EvilModalWrapper implements AfterViewInit {
   @ViewChild('modalContent', { read: ViewContainerRef })
   modalContent!: ViewContainerRef;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
     const componentRef: ComponentRef<any> = this.modalContent.createComponent(
@@ -71,9 +70,10 @@ export class EvilModalWrapper implements AfterViewInit {
   }
 
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(
-    event: KeyboardEvent,
+    event: Event,
   ) {
-    event.stopImmediatePropagation();
+    const ke = event as KeyboardEvent;
+    ke.stopImmediatePropagation();
     this.hardDismiss();
   }
 

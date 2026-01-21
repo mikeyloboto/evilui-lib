@@ -1,15 +1,15 @@
 <div
   class="flex max-w-fit cursor-pointer flex-row gap-2"
-  (click)="checked = !checked"
+  (click)="checkedChange.emit(!checked())"
 >
   <div class="flex flex-col justify-center">
     <div
       class="relative h-[1em] w-[2em] rounded-full bg-gradient-to-b to-black ring-2 ring-black transition-all duration-100 hover:ring-2 hover:ring-offset-2 hover:ring-offset-black"
-      [class]="getClasses()"
+      [class]="classes()"
     >
       <div
         class="absolute h-[1em] w-[1em] rounded-full border-2 border-white transition-all duration-100"
-        [class]="getCenterClasses()"
+        [class]="centerClasses()"
       ></div>
     </div>
   </div>
