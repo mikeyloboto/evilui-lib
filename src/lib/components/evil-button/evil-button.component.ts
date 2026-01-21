@@ -28,7 +28,7 @@ export class EvilButtonComponent {
   });
 
   handleClick() {
-    if (this.link) this.router.navigate([this.link]);
+    if (this.link()) this.router.navigate([this.link()]);
     this.click.emit();
   }
 }
