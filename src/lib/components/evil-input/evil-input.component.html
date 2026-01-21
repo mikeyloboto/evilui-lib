@@ -5,9 +5,6 @@
   [placeholder]="placeholder"
   (ngModelChange)="data = $event; dataChange.emit(data); change.emit()"
   [type]="type"
-<<<<<<< HEAD
   (keydown)="dataChange.emit(data()); change.emit()"
-=======
->>>>>>> d28fad7 (changes to update logic on button)
   (keydown.enter)="enterClick.emit()"
 />
