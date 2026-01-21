@@ -6,13 +6,13 @@ import {
   Output,
 } from '@angular/core';
 import { EvilButtonComponent } from '../evil-button/evil-button.component';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-metadata-editor',
   standalone: true,
-  imports: [EvilButtonComponent, CommonModule, FormsModule],
+  imports: [EvilButtonComponent, FormsModule],
   templateUrl: './metadata-editor.component.html',
   styleUrl: './metadata-editor.component.scss',
 })

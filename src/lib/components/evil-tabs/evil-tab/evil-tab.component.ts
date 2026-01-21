@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'evil-tab',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './evil-tab.component.html',
   styleUrl: './evil-tab.component.css',
 })

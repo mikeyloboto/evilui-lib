@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EvilToastService } from '../evil-toast/evil-toast.service';
 
 @Component({
   selector: 'evil-tag-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './evil-taglist.component.html',
   styleUrl: './evil-taglist.component.scss',
 })

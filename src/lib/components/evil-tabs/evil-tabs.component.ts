@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   AfterContentInit,
   Component,
@@ -11,7 +11,7 @@ import { EvilTabComponent } from './evil-tab/evil-tab.component';
 @Component({
   selector: 'evil-tab-container',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './evil-tabs.component.html',
   styleUrl: './evil-tabs.component.scss',
 })

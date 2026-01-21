@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { EvilButtonComponent } from '../evil-button/evil-button.component';
 import { EvilToastInfo, EvilToastService } from './evil-toast.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'evil-toast-container',
   standalone: true,
-  imports: [CommonModule, FormsModule, EvilButtonComponent],
+  imports: [FormsModule, EvilButtonComponent],
   templateUrl: './evil-toast.component.html',
   styleUrl: './evil-toast.component.scss',
 })

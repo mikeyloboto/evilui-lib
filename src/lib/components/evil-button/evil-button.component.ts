@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'evil-button',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './evil-button.component.html',
   styleUrl: './evil-button.component.scss',
 })

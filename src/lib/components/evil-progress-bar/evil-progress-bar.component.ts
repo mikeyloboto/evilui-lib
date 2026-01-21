@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'evil-progress-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './evil-progress-bar.component.html',
   styleUrl: './evil-progress-bar.component.scss',
 })

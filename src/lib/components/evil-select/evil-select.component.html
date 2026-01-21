@@ -3,9 +3,11 @@
   (ngModelChange)="procChange($event)"
   class="rounded-lg border-y-2 bg-neutral-900 bg-gradient-to-b from-neutral-800 to-neutral-950 p-2 transition-all duration-200 hover:shadow-glow hover:ring-2 hover:ring-offset-2 hover:ring-offset-black focus:outline-none"
   [class]="getClasses()"
->
+  >
   <option disabled>{{ placeholder }}</option>
-  <option *ngFor="let val of data" [ngValue]="val">
-    {{ valueField ? val[valueField] : val }}
-  </option>
+  @for (val of data; track val) {
+    <option [ngValue]="val">
+      {{ valueField ? val[valueField] : val }}
+    </option>
+  }
 </select>

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -13,7 +13,7 @@ import {
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   selector: 'evil-wrapper',
   template: `
     <div class="wrapper" (click)="dismiss()">
